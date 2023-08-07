@@ -23,15 +23,14 @@ const LandingTitle = () => {
         <div className="relative sm:py-48 py-24 flex flex-col justify-center h-full items-start space-y-8 tracking-tight">
           <div className="relative">
             <p className="mb-2 font-medium text-gray-700 uppercase">
-              Work smarter
+              Kuber-Loudy
             </p>
             <h2 className="text-5xl font-bold text-gray-900 xl:text-6xl">
-              Features to help you work smarter
+              버튼 하나로 시작하는 Kubernetes 어플리케이션
             </h2>
           </div>
           <p className="text-2xl text-gray-700">
-            We've created a simple formula to follow in order to gain more out
-            of your business and your application.
+            K8S를 처음 시작하는 당신을 위한 안내서
           </p>
           <a
             href="#_"
@@ -39,7 +38,7 @@ const LandingTitle = () => {
             data-primary="blue-600"
             data-rounded="rounded-lg"
           >
-            Get Started Today
+            오늘 시작하기
           </a>
         </div>
       </div>
