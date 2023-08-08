@@ -27,7 +27,8 @@ export default function DashboardLayout({
                 admin
               </Link>
               <button className="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
-                <i className="fas fa-plus mr-3"></i>새 Iam 계정
+                <i className="fas fa-plus mr-3"></i>
+                새 Iam 계정
               </button>
             </div>
 
