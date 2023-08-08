@@ -1,7 +1,6 @@
 import "@/app/globals.css";
 import { Button, HighlightedButton } from "@/components/common/button";
-import { LoginInput } from "@/components/common/input";
-
+import { EmailInput, PasswordInput } from "@/components/common/input";
 
 /**
  * 랜딩 페이지 컴포넌트
@@ -55,14 +54,54 @@ const LogInForm = () => {
         className="flex flex-col items-start justify-start w-full
         p-10 lg:p-16 xl:p-24"
       >
-        <h3 className="w-full text-3xl font-bold mb-4">Sign Up</h3>
-        <p className="text-left">Email</p>
-        <LoginInput/>
-        <p>Password</p>
-        <LoginInput/>
+        <div className="max-w-md w-full space-y-8">
+          <div className="text-center">
+            <h2 className="mt-6 text-3xl font-bold text-gray-900">
+              Welcom Back!
+            </h2>
+            <p className="mt-2 text-sm text-gray-500">
+              소셜 로그인으로 로그인하기
+            </p>
+          </div>
 
-        <HighlightedButton text="로그인"/>
-        <Button text="회원가입"/>
+          <div className="flex flex-row justify-center items-center space-x-3">
+            <a
+              href=""
+              target="_blank"
+              className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg   
+              navericon hover:shadow-lg cursor-pointer transition ease-in duration-300"
+            />
+            {/* <img
+              className="w-4 h-4"
+              src=""
+            /> */}
+
+            <a
+              href=""
+              target="_blank"
+              className="w-11 h-11 items-center justify-center inline-flex rounded-2xl font-bold text-lg  text-white bg-blue-400 hover:shadow-lg cursor-pointer transition ease-in duration-300"
+            />
+            {/* <img
+              className="w-4 h-4"
+              src=""
+            /> */}
+          </div>
+
+          <div className="flex items-center justify-center space-x-2">
+            <span className="h-px w-16 bg-gray-200"></span>
+            <span className="text-gray-300 font-normal">or continue with</span>
+            <span className="h-px w-16 bg-gray-200"></span>
+          </div>
+        </div>
+
+        <p className="mt-6 text-left px-1 text-sm text-gray-600">이메일</p>
+        <EmailInput />
+        <p className="px-1 text-sm text-gray-600">비밀번호</p>
+        <PasswordInput />
+
+        <div className="mt-6"></div>
+        <HighlightedButton text="로그인" />
+        <Button text="회원가입" />
       </div>
     </div>
   );
