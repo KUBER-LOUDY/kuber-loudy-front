@@ -1,5 +1,7 @@
 import "@/app/globals.css";
 import { Button, HighlightedButton } from "@/components/common/button";
+import { LoginInput } from "@/components/common/input";
+
 
 /**
  * 랜딩 페이지 컴포넌트
@@ -25,12 +27,12 @@ const LandingTitle = () => {
             <p className="mb-2 font-medium text-gray-700 uppercase">
               Kuber-Loudy
             </p>
-            <h2 className="text-5xl font-bold text-gray-900 xl:text-6xl">
-              버튼 하나로 시작하는 Kubernetes 어플리케이션
+            <h2 className="text-5xl font-bold text-gray-900 xl:text-6xl break-keep">
+              버튼 하나로 시작하는 Kubernetes
             </h2>
           </div>
           <p className="text-2xl text-gray-700">
-            K8S를 처음 시작하는 당신을 위한 안내서
+            K8S 어플리케이션을 처음 시작하는 당신을 위한 안내서
           </p>
           <a
             href="#_"
@@ -54,8 +56,13 @@ const LogInForm = () => {
         p-10 lg:p-16 xl:p-24"
       >
         <h3 className="w-full text-3xl font-bold mb-4">Sign Up</h3>
-        <HighlightedButton />
-        <Button />
+        <p className="text-left">Email</p>
+        <LoginInput/>
+        <p>Password</p>
+        <LoginInput/>
+
+        <HighlightedButton text="로그인"/>
+        <Button text="회원가입"/>
       </div>
     </div>
   );

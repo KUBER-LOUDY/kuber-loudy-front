@@ -1,13 +1,10 @@
-import {
-  FormEventHandler,
-  ReactElement,
-  JSXElementConstructor,
-  ReactFragment,
-  ReactPortal,
-  PromiseLikeOfReactNode,
-} from "react";
+interface textInfo {
+  text : string;
+}
 
-const HighlightedButton = () => {
+
+const HighlightedButton = ({text} : textInfo) => {
+
   return (
     <div className="w-full">
       <button
@@ -18,13 +15,13 @@ const HighlightedButton = () => {
         hover:bg-blue-800 hover:shadow-lg
         focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2 focus:ring--green-700"
       >
-        하이라이트 버튼
+        {text}
       </button>
     </div>
   );
 };
 
-const Button = () => {
+const Button =({text} : textInfo) => {
   return (
     <div className="w-full">
       <button
@@ -35,7 +32,7 @@ const Button = () => {
         hover:bg-gray-100
         focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2"
       >
-        일반 버튼
+       {text}
       </button>
     </div>
   );
