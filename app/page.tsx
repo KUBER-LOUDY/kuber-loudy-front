@@ -1,6 +1,11 @@
+"use client";
 import "@/app/globals.css";
-import { Button, HighlightedButton } from "@/components/common/button";
+import {
+  Button,
+  LoginButton,
+} from "@/components/common/button";
 import { EmailInput, PasswordInput } from "@/components/common/input";
+import { useEffect, useState } from "react";
 
 /**
  * 랜딩 페이지 컴포넌트
@@ -48,6 +53,26 @@ const LandingTitle = () => {
 };
 
 const LogInForm = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  
+  function onEmailChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setEmail(e.target.value);
+  }
+
+  function onPasswordChange(e: React.ChangeEvent<HTMLInputElement>) {
+    setPassword(e.target.value);
+  }
+
+  const data = {
+    email: email,
+    password: password,
+  };
+
+useEffect(()=>{
+console.log(email)
+},[email])
+
   return (
     <div className="mx-10 sm:w-3/4 sm:my-10 bg-white rounded-lg">
       <div
@@ -95,12 +120,14 @@ const LogInForm = () => {
         </div>
 
         <p className="mt-6 text-left px-1 text-sm text-gray-600">이메일</p>
-        <EmailInput />
+        <EmailInput event={onEmailChange}/>
         <p className="px-1 text-sm text-gray-600">비밀번호</p>
-        <PasswordInput />
+        <PasswordInput event={onPasswordChange}/>
+
+        {/*4. login ok => url mapping => dashboard page */}
 
         <div className="mt-6"></div>
-        <HighlightedButton text="로그인" />
+        <LoginButton text="로그인" request={data} />
         <Button text="회원가입" />
       </div>
     </div>

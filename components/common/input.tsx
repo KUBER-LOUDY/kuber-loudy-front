@@ -1,4 +1,10 @@
-const EmailInput = () => {
+
+interface InputChange{
+  event : React.ChangeEventHandler<HTMLInputElement>
+}
+
+
+const EmailInput = ({event}:InputChange) => {
   return (
     <input
       className="
@@ -8,11 +14,12 @@ const EmailInput = () => {
       placeholder="mail4you@gmail.com"
       type="email"
       name="email"
+      onChange={event}
     ></input>
   );
 };
 
-const PasswordInput = () => {
+const PasswordInput = ({event}:InputChange) => {
   return (
     <input
       className="
@@ -21,7 +28,8 @@ const PasswordInput = () => {
     focus:outline-none md:focus:ring-2 focus:ring-0 focus:ring-offset-2"
       placeholder="******"
       type="password"
-      name="email"
+      name="password"
+      onChange={event}
     ></input>
   );
 };
