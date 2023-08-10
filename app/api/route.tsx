@@ -15,7 +15,7 @@ export async function login(data: object) {
     try{
         const response = await axios.post("http://localhost:8080/members/login",data)
         console.log(response)
-        
+
         return response;
     }
     catch(error){

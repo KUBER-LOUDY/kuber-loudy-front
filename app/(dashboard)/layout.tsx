@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import "@/app/globals.css";
 import Link from "next/link";
+import { signIn } from "../api/route";
 
 export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
-  title: "Admin",
+  title: "Kuber-Loudy",
+  description: "Web Console for building k8s architecture"
 };
 
 export default function DashboardLayout({
-  children, // will be a page or nested layout
+  children, 
 }: {
   children: React.ReactNode;
 }) {
@@ -20,23 +22,22 @@ export default function DashboardLayout({
           <aside className="relative bg-sidebar h-screen w-64 hidden sm:block shadow-xl ">
             {/* 새 iam 계정 버튼 */}
             <div className="p-6">
-              <Link
-                href="/iam/list"
-                className="text-white text-3xl font-semibold uppercase hover:text-gray-300"
-              >
+              <p className="text-white text-3xl font-semibold uppercase">
                 admin
-              </Link>
-              <button className="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center">
+              </p>
+              <Link href="dashboard/member/iam" className="w-full bg-white cta-btn font-semibold py-2 mt-5 rounded-br-lg rounded-bl-lg rounded-tr-lg shadow-lg hover:shadow-xl hover:bg-gray-300 flex items-center justify-center"
+              >
                 <i className="fas fa-plus mr-3"></i>
                 새 Iam 계정
-              </button>
+              </Link>
             </div>
 
             {/* 사이드 메뉴 */}
             <nav className="text-white text-base font-semibold pt-3">
               <Link
                 href="/dashboard/member/main"
-                className="flex items-center active-nav-link text-white py-4 pl-6 nav-item"
+                className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
+                // flex items-center active-nav-link text-white py-4 pl-6 nav-item
               >
                 <i className="fas fa-tachometer-alt mr-3"></i>
                 대쉬보드
@@ -52,8 +53,8 @@ export default function DashboardLayout({
                 href="/dashboard/member/kuber"
                 className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
               >
-                <i className="fas fa-align-left mr-3"></i>
-                Kubernetes 상태
+                <i className="fas fa-sticky-note mr-3"></i>
+                쿠버네티스 상태
               </Link>
               <Link
                 href="/dashboard/member/tutorials"

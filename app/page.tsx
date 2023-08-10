@@ -2,8 +2,7 @@
 import "@/app/globals.css";
 import {
   Button,
-  LoginButton,
-  SignInButton,
+  LoginButton
 } from "@/components/common/button";
 import { EmailInput, PasswordInput } from "@/components/common/input";
 import { useState } from "react";
