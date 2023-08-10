@@ -3,9 +3,10 @@ import "@/app/globals.css";
 import {
   Button,
   LoginButton,
+  SignInButton,
 } from "@/components/common/button";
 import { EmailInput, PasswordInput } from "@/components/common/input";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 /**
  * 랜딩 페이지 컴포넌트
@@ -22,7 +23,7 @@ export default function LandingPage() {
   );
 }
 
-const LandingTitle = () => {
+export const LandingTitle = () => {
   return (
     <div className="mx-auto p-10 w-full sm:py-10 align-middle ">
       <div className="relative w-full bg-cover">
@@ -52,7 +53,7 @@ const LandingTitle = () => {
   );
 };
 
-const LogInForm = () => {
+export const LogInForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   
@@ -69,9 +70,6 @@ const LogInForm = () => {
     password: password,
   };
 
-useEffect(()=>{
-console.log(email)
-},[email])
 
   return (
     <div className="mx-10 sm:w-3/4 sm:my-10 bg-white rounded-lg">
@@ -123,12 +121,9 @@ console.log(email)
         <EmailInput event={onEmailChange}/>
         <p className="px-1 text-sm text-gray-600">비밀번호</p>
         <PasswordInput event={onPasswordChange}/>
-
-        {/*4. login ok => url mapping => dashboard page */}
-
         <div className="mt-6"></div>
         <LoginButton text="로그인" request={data} />
-        <Button text="회원가입" />
+        <Button text="회원가입"></Button>
       </div>
     </div>
   );

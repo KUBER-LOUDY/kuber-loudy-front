@@ -35,28 +35,28 @@ export default function DashboardLayout({
             {/* 사이드 메뉴 */}
             <nav className="text-white text-base font-semibold pt-3">
               <Link
-                href="/dashboard/main"
+                href="/dashboard/member/main"
                 className="flex items-center active-nav-link text-white py-4 pl-6 nav-item"
               >
                 <i className="fas fa-tachometer-alt mr-3"></i>
                 대쉬보드
               </Link>
               <Link
-                href="/dashboard/ec2"
+                href="/dashboard/member/ec2"
                 className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
               >
                 <i className="fas fa-sticky-note mr-3"></i>
                 ec2 상태
               </Link>
               <Link
-                href="/dashboard/kuber"
+                href="/dashboard/member/kuber"
                 className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
               >
                 <i className="fas fa-align-left mr-3"></i>
                 Kubernetes 상태
               </Link>
               <Link
-                href="/dashboard/tutorials"
+                href="/dashboard/member/tutorials"
                 className="flex items-center text-white opacity-75 hover:opacity-100 py-4 pl-6 nav-item"
               >
                 <i className="fas fa-tablet-alt mr-3"></i>
